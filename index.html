@@ -383,11 +383,11 @@ const WORKOUTS = {
     name: "Pull Day", emoji: "🔙", sub: "Back · Biceps · Rear Delts",
     exercises: [
       { name: "Pull-ups / Lat Pulldown",   muscle: "Lats (back width)",     sets: 4, reps: "8–10",  weight: 0  },
-      { name: "Single-Arm Dumbbell Row",   muscle: "Mid-back, lats",        sets: 4, reps: "10–12", weight: 18 },
-      { name: "Dumbbell Reverse Fly ⭐",    muscle: "Rear delts",            sets: 3, reps: "12–15", weight: 7  },
-      { name: "Rear Delt Row",             muscle: "Rear delts, upper back",sets: 3, reps: "15",    weight: 9  },
-      { name: "Dumbbell Bicep Curl",       muscle: "Biceps",                sets: 3, reps: "10–12", weight: 11 },
-      { name: "Hammer Curl",               muscle: "Biceps, brachialis",    sets: 2, reps: "12",    weight: 11 },
+      { name: "Single-Arm Dumbbell Row",   muscle: "Mid-back, lats",        sets: 4, reps: "10–12", weight: 35 },
+      { name: "Dumbbell Reverse Fly ⭐",    muscle: "Rear delts",            sets: 3, reps: "12–15", weight: 15 },
+      { name: "Rear Delt Row",             muscle: "Rear delts, upper back",sets: 3, reps: "15",    weight: 20 },
+      { name: "Dumbbell Bicep Curl",       muscle: "Biceps",                sets: 3, reps: "10–12", weight: 20 },
+      { name: "Hammer Curl",               muscle: "Biceps, brachialis",    sets: 2, reps: "12",    weight: 20 },
     ]
   }
 };
@@ -521,7 +521,7 @@ function renderExercises(w) {
         <span class="set-num">${si+1}</span>
         ${isTime
           ? `<input type="text" value="${ex.reps}" style="flex:2" id="w-${ei}-${si}" placeholder="Duration">`
-          : `<input type="number" inputmode="decimal" step="0.5" value="${ex.weight||''}" id="w-${ei}-${si}" placeholder="kg" style="flex:1">
+          : `<input type="number" inputmode="decimal" step="0.5" value="${ex.weight||''}" id="w-${ei}-${si}" placeholder="lbs" style="flex:1">
              <span class="set-sep">×</span>
              <input type="number" inputmode="numeric" value="" id="r-${ei}-${si}" placeholder="reps" style="flex:1">`
         }
@@ -536,7 +536,7 @@ function renderExercises(w) {
         </div>
         <div style="text-align:right">
           <div class="ex-meta">${ex.sets} × ${ex.reps}</div>
-          ${ex.weight ? `<div class="ex-meta" style="color:var(--accent)">${ex.weight} kg</div>` : ''}
+          ${ex.weight ? `<div class="ex-meta" style="color:var(--accent)">${ex.weight} lbs</div>` : ''}
         </div>
         <span class="ex-chevron">⌄</span>
       </div>
