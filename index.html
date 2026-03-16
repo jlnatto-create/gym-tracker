@@ -46,12 +46,12 @@
 
   /* ── TOP BAR ── */
   .topbar {
-    padding: 56px 20px 16px;
+    padding: 48px 16px 12px;
     background: var(--bg);
     position: sticky; top: 0; z-index: 10;
   }
-  .topbar h2 { font-size: 26px; font-weight: 700; }
-  .topbar p { color: var(--muted); font-size: 14px; margin-top: 2px; }
+  .topbar h2 { font-size: 22px; font-weight: 700; }
+  .topbar p { color: var(--muted); font-size: 13px; margin-top: 2px; }
 
   /* ── BOTTOM NAV ── */
   nav {
@@ -73,7 +73,7 @@
   /* ── CARDS ── */
   .card {
     background: var(--card); border-radius: 16px;
-    margin: 8px 16px; padding: 16px;
+    margin: 6px 12px; padding: 14px;
   }
   .card-title { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 8px; }
 
@@ -94,8 +94,8 @@
 
   .bw-row { display: flex; align-items: center; gap: 10px; }
   .bw-row input {
-    flex: 1; background: var(--card2); border: 1.5px solid #333; border-radius: 10px;
-    color: var(--text); font-size: 20px; font-weight: 700; padding: 10px 14px;
+    width: 100px; flex-shrink: 0; background: var(--card2); border: 1.5px solid #333; border-radius: 10px;
+    color: var(--text); font-size: 16px; font-weight: 700; padding: 8px 10px;
     text-align: center;
   }
   .bw-row input:focus { outline: none; border-color: var(--accent); }
@@ -132,21 +132,21 @@
   .ex-card.open .ex-sets { display: block; }
 
   .set-row {
-    display: flex; align-items: center; gap: 8px;
+    display: flex; align-items: center; gap: 6px;
     padding: 8px 0; border-bottom: 1px solid #1e1e1e;
   }
   .set-row:last-child { border: none; }
-  .set-num { width: 24px; font-size: 13px; color: var(--muted); flex-shrink: 0; }
+  .set-num { width: 18px; font-size: 12px; color: var(--muted); flex-shrink: 0; }
   .set-row input {
-    flex: 1; background: var(--card2); border: 1.5px solid #2a2a2a;
+    width: 60px; flex-shrink: 0; min-width: 0; background: var(--card2); border: 1.5px solid #2a2a2a;
     border-radius: 8px; color: var(--text); font-size: 15px; font-weight: 600;
-    padding: 8px 10px; text-align: center;
+    padding: 8px 4px; text-align: center;
   }
   .set-row input:focus { outline: none; border-color: var(--accent); }
   .set-sep { font-size: 13px; color: var(--muted); }
   .set-done {
-    width: 34px; height: 34px; border-radius: 50%; border: 2px solid #333;
-    background: none; color: var(--muted); font-size: 18px; cursor: pointer;
+    width: 32px; height: 32px; border-radius: 50%; border: 2px solid #333;
+    background: none; color: var(--muted); font-size: 16px; cursor: pointer;
     display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     transition: all .15s;
   }
@@ -358,23 +358,23 @@ const WORKOUTS = {
   push: {
     name: "Push Day", emoji: "💪", sub: "Chest · Shoulders · Triceps",
     exercises: [
-      { name: "Flat Dumbbell Bench Press", muscle: "Chest (pecs)",        sets: 4, reps: "8–10",  weight: 13 },
-      { name: "Dumbbell Lateral Raises ⭐", muscle: "Side delts",          sets: 4, reps: "12–15", weight: 7  },
-      { name: "Seated Overhead Press",      muscle: "Shoulders",           sets: 3, reps: "10–12", weight: 11 },
-      { name: "Incline Dumbbell Press",     muscle: "Upper chest",         sets: 3, reps: "10–12", weight: 11 },
-      { name: "Dumbbell Front Raise",       muscle: "Front delts",         sets: 2, reps: "12",    weight: 7  },
-      { name: "Tricep Overhead Extension",  muscle: "Triceps",             sets: 3, reps: "12–15", weight: 11 },
+      { name: "Flat Dumbbell Bench Press", muscle: "Chest (pecs)",        sets: 4, reps: "8–10",  weight: 25 },
+      { name: "Dumbbell Lateral Raises ⭐", muscle: "Side delts",          sets: 4, reps: "12–15", weight: 15 },
+      { name: "Seated Overhead Press",      muscle: "Shoulders",           sets: 3, reps: "10–12", weight: 20 },
+      { name: "Incline Dumbbell Press",     muscle: "Upper chest",         sets: 3, reps: "10–12", weight: 20 },
+      { name: "Dumbbell Front Raise",       muscle: "Front delts",         sets: 2, reps: "12",    weight: 15 },
+      { name: "Tricep Overhead Extension",  muscle: "Triceps",             sets: 3, reps: "12–15", weight: 20 },
       { name: "Plank",                      muscle: "Core (abs, obliques)",sets: 3, reps: "60 sec",weight: 0  },
     ]
   },
   legs: {
     name: "Legs Day", emoji: "🦵", sub: "Quads · Hamstrings · Glutes · Calves",
     exercises: [
-      { name: "Goblet Squat",          muscle: "Quads, glutes",        sets: 4, reps: "10–12", weight: 18 },
-      { name: "Romanian Deadlift",     muscle: "Hamstrings, glutes",   sets: 3, reps: "10–12", weight: 15 },
-      { name: "Bulgarian Split Squat", muscle: "Quads, glutes",        sets: 3, reps: "10–12", weight: 9  },
-      { name: "Walking Lunges",        muscle: "Quads, glutes",        sets: 3, reps: "12 each",weight: 11 },
-      { name: "Dumbbell Sumo Squat",   muscle: "Inner thighs, glutes", sets: 3, reps: "15",    weight: 18 },
+      { name: "Goblet Squat",          muscle: "Quads, glutes",        sets: 4, reps: "10–12", weight: 35 },
+      { name: "Romanian Deadlift",     muscle: "Hamstrings, glutes",   sets: 3, reps: "10–12", weight: 30 },
+      { name: "Bulgarian Split Squat", muscle: "Quads, glutes",        sets: 3, reps: "10–12", weight: 20 },
+      { name: "Walking Lunges",        muscle: "Quads, glutes",        sets: 3, reps: "12 each",weight: 20 },
+      { name: "Dumbbell Sumo Squat",   muscle: "Inner thighs, glutes", sets: 3, reps: "15",    weight: 35 },
       { name: "Calf Raises",           muscle: "Calves",               sets: 4, reps: "25",    weight: 0  },
       { name: "Lying Leg Raises",      muscle: "Core, hip flexors",    sets: 3, reps: "15",    weight: 0  },
     ]
